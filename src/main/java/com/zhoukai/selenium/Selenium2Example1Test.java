@@ -42,22 +42,20 @@ public class Selenium2Example1Test {
         webdriver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
         webdriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         webdriver.manage().window().maximize();
-        webdriver.get("http://boss2.dangmeitoutiao.com/html/_/login.html");
+        webdriver.get("https://www.baidu.com/");
 
 
-        WebElement userNameEle = webdriver.findElement(By.id("username"));
-        WebElement passWordEle = webdriver.findElement(By.id("password"));
-        WebElement submitEle = webdriver.findElement(By.xpath("/html/body/table/tbody/tr/td/form/p[4]/button"));
+        WebElement keywordEle = webdriver.findElement(By.id("kw"));
+        WebElement submitEle = webdriver.findElement(By.xpath("//*[@id=\"su\"]"));
 
-        userNameEle.sendKeys("zhoukai");
-        passWordEle.sendKeys("111111");
+        keywordEle.sendKeys("zhoukai");
 
 
         submitEle.click();
 //        Actions action = new Actions(webdriver) ;
 //        action.moveToElement(webdriver.findElement(By.xpath("/html/body/table/tbody/tr/td/form/p[4]/button"))) ;
 
-        WebElement sourceArticleEle = webdriver.findElement(By.xpath("//*[@id=\"menu\"]/ul/ul[1]/li[4]/a"));
+        WebElement sourceArticleEle = webdriver.findElement(By.xpath("//*[@id=\"1\"]/h3/a"));
         sourceArticleEle.click();
         try {
             TimeUnit.SECONDS.sleep(5);
